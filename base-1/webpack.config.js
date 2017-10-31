@@ -24,7 +24,7 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(), // 开启热更新
-    new webpack.NoErrorsPlugin(), // 跳过编译时出错的代码并记录，使编译后运行时的包不会发生错误
+    new webpack.NoEmitOnErrorsPlugin(), // 跳过编译时出错的代码并记录，且会在编译结束后报错
     new UglifyJSPlugin() // 移除上下文中的未引用代码
   ]
 }

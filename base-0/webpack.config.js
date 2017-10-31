@@ -23,6 +23,6 @@ module.exports = {
   },
   plugins: [
     new webpack.HotModuleReplacementPlugin(), // 开启热更新
-    new webpack.NoErrorsPlugin() // 跳过编译时出错的代码并记录，使编译后运行时的包不会发生错误
+    new webpack.NoErrorsPlugin() // 跳过编译时出错的代码并记录，使编译后运行时的包不会发生错误 webpack2 中已弃用
   ]
 }
