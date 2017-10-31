@@ -1,10 +1,15 @@
 const path = require('path')
+const webpack = require('webpack')
+
+const hotMiddlewareScript = 'webpack-hot-middleware/client' // 后面接 ? 是给 webpack-hot-middleware 设置参数 reload=true 表示如果碰到不能hot reload的情况，就整页刷新
 
 module.exports = {
-  entry: './src/app.js',
+  entry: {
+    app: ['./src/app.js', hotMiddlewareScript]
+  },
   output: {
-    filename: 'bundle.js',
-    path: path.resolve(__dirname, 'dist')
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js'
   },
   devtool: 'eval-source-map',
   module: {
@@ -15,5 +20,9 @@ module.exports = {
         loader: "babel-loader"
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin(), // 开启热更新
+    new webpack.NoErrorsPlugin() // 跳过编译时出错的代码并记录，使编译后运行时的包不会发生错误
+  ]
 }
