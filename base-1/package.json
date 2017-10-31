@@ -1,0 +1,27 @@
+{
+  "name": "base-1",
+  "version": "1.0.0",
+  "description": "热更新",
+  "main": "app.js",
+  "scripts": {
+    "build": "cross-env webpack",
+    "dev": "cross-env node dev-server"
+  },
+  "keywords": [
+    "base-1"
+  ],
+  "author": "DahengZhang",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "cross-env": "^5.1.1",
+    "express": "^4.16.2",
+    "uglifyjs-webpack-plugin": "^1.0.1",
+    "webpack": "^3.8.1",
+    "webpack-dev-middleware": "^1.12.0",
+    "webpack-dev-server": "^2.9.3",
+    "webpack-hot-middleware": "^2.20.0"
+  }
+}
