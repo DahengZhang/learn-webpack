@@ -9,6 +9,15 @@ module.exports = merge(common, {
     app: ['./src/app.js', hotMiddlewareScript]
   },
   devtool: 'eval-source-map',
+  module: {
+    rules: [
+      {
+        test: /\.css$/,
+        exclude: /node_modules/,
+        use: [ 'style-loader', 'css-loader']
+      }
+    ]
+  },
   plugins: [
     new webpack.HotModuleReplacementPlugin(), // 开启热更新
     new webpack.NoEmitOnErrorsPlugin(), // 跳过编译时出错的代码并记录，且会在编译结束后报错

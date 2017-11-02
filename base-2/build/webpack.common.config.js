@@ -1,10 +1,17 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: '[name].bundle.[chunkhash:6].js'
+    filename: 'js/[name].bundle.[hash:6].js'
+  },
+  resolve: {
+    extensions: ['.js', '.css', '.json'],
+    alias: {
+      '@': path.resolve(__dirname, '../src')
+    }
   },
   module: {
     rules: [
@@ -17,7 +24,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({ // 动态生成 html 文件
-      title: '热更新',
+      title: 'ChatBuy',
       template: './index.html',
       inject: true
     })

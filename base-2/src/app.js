@@ -3,5 +3,7 @@ if(module.hot) {
     module.hot.accept();
 }
 
-let text = 'Hello World!!!'
+import appCss from '@/app.css'
+
+let text = 'Hello World添加ssssww'
 document.getElementById('root').innerText = text
