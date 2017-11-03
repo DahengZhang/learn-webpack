@@ -8,7 +8,7 @@ module.exports = {
     filename: 'js/[name].bundle.[hash:6].js'
   },
   resolve: {
-    extensions: ['.js', '.css', '.json'],
+    extensions: ['.js', '.css', '.scss', '.json'],
     alias: {
       '@': path.resolve(__dirname, '../src')
     }

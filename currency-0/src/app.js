@@ -3,7 +3,19 @@ if(module.hot) {
     module.hot.accept();
 }
 
-import appCss from '@/app.css'
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-let text = 'Hello World添加ssssww'
-document.getElementById('root').innerText = text
+import appCss from '@/style'
+
+class App extends React.Component {
+  render() {
+    return (
+      <div className="App">
+        Hello World!
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.getElementById('root'));
