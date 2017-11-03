@@ -19,7 +19,8 @@ module.exports = merge(common, {
               options:{
                 minimize: true //css压缩
               }
-            }
+            },
+            'postcss-loader'
           ]
         })
       }
