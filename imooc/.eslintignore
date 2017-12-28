@@ -1,0 +1,7 @@
+# 需要避开的文件夹
+node_modules/
+dist/
+
+# 需要避开的文件
+*.log
+*config*
