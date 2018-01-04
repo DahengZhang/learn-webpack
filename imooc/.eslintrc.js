@@ -17,7 +17,7 @@ module.exports = {
     */
    "rules": {
       "strict": "error", //使用严格模式
-      "indent": ["warn", 3], // 缩进风格为 3 *
+      "indent": ["warn", 3, { "SwitchCase": 1 }], // 缩进风格为 3 *
       "linebreak-style": ["warn", "unix"], // 换行风格使用Unix *
       "quotes": ["error", "single"], // 引号使用单引号 *
       "semi": ["warn", "always"], // 语句分号结尾 *
@@ -34,5 +34,6 @@ module.exports = {
       "eqeqeq": "warn", // 必须使用全等
       "newline-after-var": "warn", // 变量声明后是否需要空一行 *
       "spaced-comment": "warn", //注释风格要有空格 *
-   }
+   },
+   "globals": {}
 };

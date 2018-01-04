@@ -1,4 +1,5 @@
-const PATH = require('path')
+const PATH = require('path');
+const WEBPACK = require('webpack');
 
 module.exports = {
    entry: {
@@ -14,5 +15,10 @@ module.exports = {
          use: ['babel-loader'],
          exclude: '/node_modules/'
       }]
-   }
+   },
+   plugins: [
+      new WEBPACK.optimize.CommonsChunkPlugin({
+         minChunks: 2
+      })
+   ]
 };
