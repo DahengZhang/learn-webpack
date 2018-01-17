@@ -16,9 +16,5 @@ module.exports = {
          exclude: '/node_modules/'
       }]
    },
-   plugins: [
-      new WEBPACK.optimize.CommonsChunkPlugin({
-         minChunks: 2
-      })
-   ]
+   plugins: []
 };
