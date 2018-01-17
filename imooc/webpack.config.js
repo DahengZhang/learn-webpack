@@ -3,11 +3,14 @@ const WEBPACK = require('webpack');
 
 module.exports = {
    entry: {
-      app: ['babel-polyfill', './src/app.js']
+      pageA: ['babel-polyfill', './src/page.a.js'],
+      pageB: ['babel-polyfill', './src/page.b.js'],
+      vendor: ['lodash']
    },
    output: {
       path: PATH.resolve(__dirname, 'dist'),
-      filename: '[name].min.js'
+      filename: '[name].bundle.js',
+      chunkFilename: '[name].chunk.js'
    },
    module: {
       rules: [{
@@ -16,5 +19,15 @@ module.exports = {
          exclude: '/node_modules/'
       }]
    },
-   plugins: []
+   plugins: [
+      new WEBPACK.optimize.CommonsChunkPlugin({
+         name: 'common',
+         minChunks: 2,
+         chunks: ['pageA', 'pageB']
+      }),
+      new WEBPACK.optimize.CommonsChunkPlugin({
+         names: ['vendor', 'manifest'],
+         minChunks: Infinity
+      })
+   ]
 };
