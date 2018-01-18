@@ -38,6 +38,6 @@ module.exports = {
    },
    "globals": {},
    "plugins": [
-      "eslint-plugin-import"
+      "import"
    ]
 };
