@@ -8,7 +8,8 @@
                   ">1%",
                   "last 5 version"
                ]
-            }
+            },
+            "modules": false
          }
       ]
    ]

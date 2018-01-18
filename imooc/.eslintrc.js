@@ -7,7 +7,8 @@ module.exports = {
     },
     "extends": "eslint:recommended",
     "parserOptions": {
-        "sourceType": "module"
+        "sourceType": "module",
+        "allowImportExportEverywhere": true
     },
     /**
      * "off" 或 0      关闭规则
@@ -35,5 +36,8 @@ module.exports = {
         "newline-after-var": "warn", // 变量声明后是否需要空一行 *
         "spaced-comment": "warn", //注释风格要有空格 *
     },
-    "globals": {}
+    "globals": {},
+    "plugins": [
+        "import"
+    ]
 };

@@ -3,12 +3,14 @@ const WEBPACK = require('webpack');
 
 module.exports = {
    entry: {
+      app: ['babel-polyfill', './src/app.js'],
       pageA: ['babel-polyfill', './src/page.a.js'],
       pageB: ['babel-polyfill', './src/page.b.js'],
       vendor: ['lodash']
    },
    output: {
       path: PATH.resolve(__dirname, 'dist'),
+      publicPath: PATH.resolve(__dirname, 'dist'),
       filename: '[name].bundle.js',
       chunkFilename: '[name].chunk.js'
    },
